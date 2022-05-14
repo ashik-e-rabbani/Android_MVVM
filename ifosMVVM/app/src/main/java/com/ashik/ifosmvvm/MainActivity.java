@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.ashik.ifosmvvm.databinding.ActivityMainBinding;
 
@@ -19,5 +20,26 @@ public class MainActivity extends AppCompatActivity {
 
         // Step 3
         activityMainBinding.showName.setText("HUUUUU");
+
+        activityMainBinding.startStopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (activityMainBinding.progressBar.getVisibility()==View.VISIBLE)
+                {
+                    activityMainBinding.progressBar.setVisibility(View.INVISIBLE);
+                    activityMainBinding.startStopBtn.setText("START");
+                }else {
+                    activityMainBinding.progressBar.setVisibility(View.VISIBLE);
+                    activityMainBinding.startStopBtn.setText("STOP");
+                }
+
+
+            }
+        });
     }
+
+
+
+
 }
