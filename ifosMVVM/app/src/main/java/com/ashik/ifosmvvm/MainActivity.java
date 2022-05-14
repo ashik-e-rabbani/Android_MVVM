@@ -37,9 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        // Here it is getting data as an object and passing it to view xml > xml is parsing the data accordingly
+        // in real life scenarios getStudent method type will be user to get API call objects.
+        activityMainBinding.setStudent(getStudent());
+
+
     }
 
 
+    private Student getStudent()
+    {
+        Student student = new Student("10", "Ashik");
+        return student;
+    }
 
 
 }
