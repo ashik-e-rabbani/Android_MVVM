@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         // Step 3
         activityMainBinding.showName.setText("HUUUUU");
 
-        //for viewmodel access
-        ViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        //for viewmodel access, to pass value use factory
+        ViewModel = new ViewModelProvider(this, new MainActivityViewModelFactory(5)).get(MainActivityViewModel.class);
 
         activityMainBinding.startStopBtn.setOnClickListener(new View.OnClickListener() {
             @Override

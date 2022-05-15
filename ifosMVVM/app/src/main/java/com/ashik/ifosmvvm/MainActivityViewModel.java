@@ -4,7 +4,11 @@ import androidx.lifecycle.ViewModel;
 
 public class MainActivityViewModel extends ViewModel {
 
-    Integer count = 0;
+    Integer count;
+
+    public MainActivityViewModel(Integer count) {
+        this.count = count;
+    }
 
     public Integer getCurrentCount(){
         return count;
