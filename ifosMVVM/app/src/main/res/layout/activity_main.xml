@@ -25,6 +25,14 @@
             android:id="@+id/progressBar"
             android:visibility="invisible"
 ></ProgressBar>
+
+        <TextView
+            android:id="@+id/count_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30sp"
+            />
         <TextView
             android:id="@+id/show_id"
             android:layout_width="wrap_content"

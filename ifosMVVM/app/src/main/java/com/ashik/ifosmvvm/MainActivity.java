@@ -2,6 +2,7 @@ package com.ashik.ifosmvvm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     //Step 1
     private ActivityMainBinding activityMainBinding;
 
+    private MainActivityViewModel ViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +24,15 @@ public class MainActivity extends AppCompatActivity {
         // Step 3
         activityMainBinding.showName.setText("HUUUUU");
 
+        //for viewmodel access
+        ViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
         activityMainBinding.startStopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                activityMainBinding.countNo.setText(ViewModel.getCurrentCount().toString());
+                ViewModel.updateCurrentCount();
 
                 if (activityMainBinding.progressBar.getVisibility()==View.VISIBLE)
                 {
